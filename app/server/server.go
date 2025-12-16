@@ -13,6 +13,7 @@ import (
 	"pos-api/util/config"
 	"pos-api/util/swagger"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
 )
@@ -41,6 +42,15 @@ func NewServer(config config.Config) *Server {
 		ctx:    ctx,
 		sqlDB:  conn,
 	}
+
+	// CORS for frontend apps (adjust origins as needed)
+	server.engine.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:3000", "http://localhost:5173"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}))
 
 	// Initialize Swagger
 	swagger.Initialize(server.engine)
