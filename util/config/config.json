@@ -1,10 +1,10 @@
 {
     "DB_DRIVER": "postgres",
-    "DB_SOURCE": "postgresql://postgres:postgres@127.0.0.1:5432/garoga_pos?sslmode=disable",
-    "POSTGRES_USER": "postgres",
-    "POSTGRES_PASSWORD": "postgres",
+    "DB_SOURCE": "postgresql://garoga_pos_user:gBXw92X44Z3fPiT4dzpLSQbmlTKwuHdH@dpg-d54o3angi27c73edspq0-a.singapore-postgres.render.com/garoga_pos", 
+    "POSTGRES_USER": "garoga_pos_user",
+    "POSTGRES_PASSWORD": "gBXw92X44Z3fPiT4dzpLSQbmlTKwuHdH",
     "POSTGRES_DB": "garoga_pos",
-    "SERVER_ADDRESS": "8080",
+    "SERVER_ADDRESS": "5432",
     "JWT_SECRET": "nM4t0fw80-qY3jd1N1CRPbRfrB6JiX-D-UZl6uMMmb8"
 }
   
