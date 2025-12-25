@@ -22,7 +22,7 @@ type CreateOrder struct {
 	// - member: required: customer.id
 	Customer      Customer          `json:"customer"`
 	CustomerID    int64             `json:"customer_id"`
-	PaymentMethod string            `json:"payment_method" binding:"required,oneof=cash transfer"`
+	PaymentMethod string            `json:"payment_method" binding:"required,oneof=cash transfer qris"`
 	Items         []CreateOrderItem `json:"items" binding:"required,min=1,dive"`
 }
 
