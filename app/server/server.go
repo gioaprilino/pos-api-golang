@@ -45,7 +45,7 @@ func NewServer(config config.Config) *Server {
 
 	// CORS for frontend apps (adjust origins as needed)
 	server.engine.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://v0-pos-frontend-next-js.vercel.app"},
+		AllowOrigins:     []string{"https://v0-pos-frontend-next-js.vercel.app", "https://v0-web-app-with-api-ten.vercel.app/"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
